@@ -20,7 +20,7 @@ const personSchema = new mongoose.Schema({
 		type: String,
 		validate: {
 			validator: function(v) {
-				return /[0-9]{2,3}-[0-9]+/.test(v)
+				return /^[0-9]{2,3}-[0-9]*$/.test(v)
 			}
 		},
 		required: true

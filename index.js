@@ -48,7 +48,7 @@ app.post('/api/persons', (request, response, next) => {
 		.then(result => {
 			const persons = result.some(person => person.name === body.name)
 			if (persons) {
-				response.status(400).send({
+				response.status(400).json({
 					error: 'name must be unique'
 				})
 			} else {
